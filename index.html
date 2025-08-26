@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片引用示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0066cc;
+            margin-top: 30px;
+        }
+        .image-example {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .image-example img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        .code-block {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .deployment-status {
+            background: #e9f5ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+            margin-top: 30px;
+        }
+        .status-item {
+            margin: 10px 0;
+        }
+        .status-success {
+            color: green;
+        }
+        .status-pending {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>图床图片引用示例</h1>
+    
+    <p>本页面演示如何在HTML中引用Cloudflare Pages图床中的图片。您可以直接复制以下代码示例到您的网页中使用。</p>
+    
+    <div class="image-example">
+        <h2>示例1：引用images目录下的test.png</h2>
+        <div class="code-block">&lt;img src="https://d986c8d5-images-host-96g.pages.dev/images/test.png" alt="测试图片1"&gt;</div>
+        <img src="https://d986c8d5-images-host-96g.pages.dev/images/test.png" alt="测试图片1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"><rect width="200" height="100" fill="%23f0f0f0"/><text x="100" y="50" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="%23999">图片加载失败</text></svg>';">
+    </div>
+    
+    <div class="image-example">
+        <h2>示例2：引用images目录下的test2.png</h2>
+        <div class="code-block">&lt;img src="https://d986c8d5-images-host-96g.pages.dev/images/test2.png" alt="测试图片2"&gt;</div>
+        <img src="https://d986c8d5-images-host-96g.pages.dev/images/test2.png" alt="测试图片2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"><rect width="200" height="100" fill="%23f0f0f0"/><text x="100" y="50" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="%23999">图片加载失败</text></svg>';">
+    </div>
+    
+    <div class="image-example">
+        <h2>示例3：引用根目录下的test2.png</h2>
+        <div class="code-block">&lt;img src="https://d986c8d5-images-host-96g.pages.dev/test2.png" alt="测试图片3"&gt;</div>
+        <img src="https://d986c8d5-images-host-96g.pages.dev/test2.png" alt="测试图片3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"><rect width="200" height="100" fill="%23f0f0f0"/><text x="100" y="50" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="%23999">图片加载失败</text></svg>';">
+    </div>
+    
+    <div class="deployment-status">
+        <h2>部署状态检查</h2>
+        <div class="status-item">
+            <strong>访问图床主页：</strong>
+            <a href="https://d986c8d5-images-host-96g.pages.dev" target="_blank">https://d986c8d5-images-host-96g.pages.dev</a>
+        </div>
+        <div class="status-item">
+            <strong>本页面地址：</strong>
+            <a href="https://d986c8d5-images-host-96g.pages.dev/1.html" target="_blank">https://d986c8d5-images-host-96g.pages.dev/1.html</a>
+        </div>
+        <div class="status-item">
+            <strong>验证方法：</strong>
+            <ol>
+                <li>检查上方图片是否能正常显示</li>
+                <li>如果图片加载失败，等待几分钟后刷新页面（可能正在部署中）</li>
+                <li>确认所有链接都能正常访问</li>
+                <li>在不同设备或浏览器上测试访问</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
